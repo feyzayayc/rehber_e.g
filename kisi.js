@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 const dosyadanKisiOku = function () {
     try {
@@ -22,7 +23,7 @@ const kisiEkle = function (isim, telNo) {
     if (ayniAdaSahipKisilerDizisi.length === 0) {
         kisilerDizisi.push({ isim: isim, telNo: telNo });
         dosyayaKisiYaz(kisilerDizisi);
-        console.log(isim + " isimli kullanıcı eklendi")
+        console.log(chalk.green.inverse(isim + " isimli kullanıcı eklendi"))
     }
     else {
         console.log(telNo + " numaralı kayıt zaten var");
@@ -43,11 +44,11 @@ const kisiSil = function (telNo) {
     });
     // console.log(telnoKontrol);
     if (kisilerDizisi.length > telnoKontrol.length) {
-        console.log(telNo + " silindi");
+        console.log(chalk.green.inverse(telNo + " silindi"));
         dosyayaKisiYaz(telnoKontrol);
     }
     else {
-        console.log(telNo + " numara bulunamadı");
+        console.log(chalk.red.inverse(telNo + " numara bulunamadı"));
     }
 }
 
@@ -65,7 +66,7 @@ const kisiGoster = function (isim) {
 }
 
 const kisiListele = function () {
-    console.log(`tüm kisiler listelenecek`);
+    console.log(chalk.green(`tüm kisiler listelenecek`));
     const tumKisiler = dosyadanKisiOku();
     tumKisiler.forEach(kisi => {
         console.log("İsim: " + kisi.isim + " Numara :" + kisi.telNo)

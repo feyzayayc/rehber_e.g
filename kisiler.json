@@ -1,14 +1,1 @@
-[
-    {
-        "isim": "user2",
-        "telNo": "456456"
-    },
-    {
-        "isim": "Rahime",
-        "telNo": "123456"
-    },
-    {
-        "isim": "Feyza",
-        "telNo": "789465"
-    }
-]
+[{"isim":"user2","telNo":"456456"},{"isim":"Feyza","telNo":"789465"},{"isim":"Akis","telNo":"789465123"}]
